@@ -1,13 +1,5 @@
 image: node:6.4
 before_script:
-  # SSH setup
-  - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
-  - eval $(ssh-agent -s)
-  - ssh-add <(echo "$SSH_PRIVATE_KEY")
-  - mkdir -p ~/.ssh
-  - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
-
-
   - npm config set spin false
   - npm install -g ember-cli
   - npm install -g phantomjs-prebuilt
