@@ -1,21 +1,22 @@
----
 language: node_js
 node_js:
-  - "6"
-
+- '6'
 sudo: false
-
 cache:
   directories:
-    - $HOME/.npm
-
+  - "$HOME/.npm"
 before_install:
-  - npm config set spin false
-  - npm install -g phantomjs-prebuilt
-  - phantomjs --version
-
+- npm config set spin false
+- npm install -g phantomjs-prebuilt
+- phantomjs --version
 install:
-  - npm install
-
+- npm install
 script:
-  - npm test
+- npm test
+deploy:
+  provider: heroku
+  api_key:
+    secure: Ojja++Ha0XOklxjQ1kT6mi1T84kyePTBbx+I5mzVaKpzr/n/cmlr6UK3f7ZBWGLRq0D8ntsfF9bZ1q7A0YCUcoi5annreHdhvIH0EqwqjrHsxkksQbymEJaE0Pkpjh+LuW5q4yvm3nYZ8L02By3NtNprgZZPF7+sfCX4JXzpeThBq9xJJcpsrBzgpO1nfO7F6qh8iIKDc8MAT3Bk/nbXoMOFXjIKyGVNia7ayzcUVtWuy/rFFTt83B4EQnzDBGJpgg0Et285zv+eskaHiNIu+m1rAf5NurGQb23MwVEL5v9ofiozElUq7emG98ttb27RjwJTZWQ3AKMgA0PW89pAh/KeyfktZ3RLcdHffBsQ4IIy7ndmShWfpudnIXmwItVuXgu6ZBl30v5GvUhNv20pTRHoLVxCALjH5fwDHmowpW6Fn4cn+vC1qDVa2P/YjCtXofD0St2w0DfNiLW3Z+v7mNVV44e9kibV9EzKVZsoNVUafo4vcHC1KXLsgZz6ah21TC43XEPnxgnJ12H4Sry8KGkv6aHh7Yr+ygMUEQMtaz7qy9dr/oEk9neTvpefHmLwl/pC5CzvGrcl7+fpUQKIPzX+hdg7nN/NFKgGM87nVIrT/N+CDlLgorHQ2IQrCHnnI/sCZrLCU+rOf0GMcT6grIH3w5yro8krYXvMNblej4E=
+  app: cmsx3-ui
+  on:
+    repo: Filyox3/cmsx3-ui
