@@ -1,4 +1,8 @@
-# cmsx3
+# Travis Build Status
+
+[![Build Status](https://travis-ci.org/Filyox3/cmsx3-ui.svg?branch=master)](https://travis-ci.org/Filyox3/cmsx3-ui)
+
+# cmsx3-ui
 
 This README outlines the details of collaborating on this Ember application.
 A short introduction of this app could easily go here.
