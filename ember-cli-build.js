@@ -11,6 +11,14 @@ module.exports = function(defaults) {
     'esw-cache-fallback': {
       patterns: [ '/' ],
       version: '1' // Changing the version will bust the cache
+    },
+    'materialize-shim': {
+      omitJS: true
+    },
+    sassOptions: {
+      includePaths: [
+        'bower_components/materialize/sass'
+      ]
     }
   });
 

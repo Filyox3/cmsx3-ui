@@ -1,0 +1,20 @@
+<div class="layout-row layout-align-center-center">
+  <div class="flex-30">
+    {{#paper-card as |card|}}
+      {{#card.title as |title|}}
+        {{#title.text as |text|}}
+          {{#text.headline}}Login{{/text.headline}}
+        {{/title.text}}
+      {{/card.title}}
+      {{#card.content}}
+        <div class="layout-column layout-align-center">
+          {{paper-input class="flex" label="E-mail" type="email" value=email onChange=(action (mut email))}}
+          {{paper-input class="flex" label="Password" type="password" value=password onChange=(action (mut password))}}
+        </div>
+      {{/card.content}}
+      {{#card.actions}}
+        {{#paper-button onClick=(route-action 'doLogin')}}Login{{/paper-button}}
+      {{/card.actions}}
+    {{/paper-card}}
+  </div>
+</div>

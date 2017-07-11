@@ -1,0 +1,21 @@
+<div class="layout-row layout-align-center-center">
+  <div class="flex-30">
+    {{#paper-card as |card|}}
+      {{#card.title as |title|}}
+        {{#title.text as |text|}}
+          {{#text.headline}}Register{{/text.headline}}
+        {{/title.text}}
+      {{/card.title}}
+      {{#card.content}}
+        <div class="layout-column layout-align-center">
+          {{paper-input label="E-mail" value=email onChange=(action (mut email)) required=true}}
+          {{paper-input label="Password" value=password onChange=(action (mut password)) required=true}}
+          {{paper-input label="Confirm Password" value=confirmPassword onChange=(action (mut confirmPassword)) required=true}}
+        </div>
+      {{/card.content}}
+      {{#card.actions}}
+        {{#paper-button onClick=(route-action 'doRegister')}}Register{{/paper-button}}
+      {{/card.actions}}
+    {{/paper-card}}
+  </div>
+</div>
